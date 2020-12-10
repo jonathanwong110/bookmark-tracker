@@ -1,10 +1,16 @@
+html {
+  box-sizing: border-box;
+}
+
 body {
-  background: url("https://wallpaperaccess.com/full/660691.jpg");
+  background: url("https://i.pinimg.com/originals/de/1d/df/de1ddf9ee30e08e15460626b919ef87e.jpg");
   background-size: cover;
   background-position: 50% 60%;
   background-attachment: fixed;
   color: white;
   font-family: Verdana, sans-serif;
+  margin: 0;
+  min-height: 100vh;
 }
 
 :root {
@@ -12,7 +18,7 @@ body {
   --theme-hover: #262673;
 }
 
-/* App Headings */
+/* Headings */
 
 .app-title {
   margin-top: 20px;
@@ -40,6 +46,7 @@ body {
   background-color: var(--theme);
   font-size: 25px;
   font-weight: 500;
+  max-width: 90%
 }
 
 #modal-button:hover {
@@ -140,4 +147,16 @@ body {
 
 .item a:hover {
   color: white
+}
+
+/* Media Query */
+
+@media screen and (max-width: 600px) {
+  .app-title, .app-description {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .container {
+    flex-direction: column;
+  }
 }

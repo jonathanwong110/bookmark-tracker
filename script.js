@@ -62,8 +62,8 @@ function getBookmarks() {
   } else {
     let id = `Bookmark List`
     bookmarks[id] = {
-      name: 'Stackoverflow',
-      url: 'https://stackoverflow.com/'
+      name: 'YouTube',
+      url: 'https://youtube.com/'
     }
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   }

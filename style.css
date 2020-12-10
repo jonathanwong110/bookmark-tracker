@@ -1,0 +1,28 @@
+body {
+  background: url("https://wallpaperaccess.com/full/660691.jpg");
+  background-size: cover;
+  background-position: 50% 60%;
+  background-attachment: fixed;
+  color: white;
+  font-family: Verdana, sans-serif;
+}
+
+.app-title {
+  margin-top: 20px;
+}
+
+.app-title, .app-description {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.app-description {
+  margin-bottom: 20px;
+}
+
+#modal-button {
+  margin: 0 auto;
+  display: block;
+}

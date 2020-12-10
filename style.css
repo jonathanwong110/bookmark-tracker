@@ -7,8 +7,15 @@ body {
   font-family: Verdana, sans-serif;
 }
 
+:root {
+  --theme: #333399;
+}
+
+/* App Headings */
+
 .app-title {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .app-title, .app-description {
@@ -22,7 +29,47 @@ body {
   margin-bottom: 20px;
 }
 
+/* Modal */
+
+#x-close-button {
+  color: white;
+}
+
 #modal-button {
   margin: 0 auto;
   display: block;
+  padding: 16px 32px;
+  border-color: var(--theme);
+  background-color: var(--theme);
+  font-size: 25px;
+}
+
+.modal-header {
+  color: white;
+  background-color: var(--theme);
+}
+
+/* Form Input */
+
+.form-label {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--theme)
+}
+
+#website-name, #website-url {
+  border-radius: 5px;
+  width: 100%;
+}
+
+#website-name:focus, #website-url:focus {
+  border: 2px solid var(--theme) !important;
+  outline-width: 0;
+}
+
+#form-save-button {
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  background-color: var(--theme)
 }

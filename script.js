@@ -34,6 +34,9 @@ function displayBookmarks() {
     // Close Icon
     const closeIcon = document.createElement('i');
     closeIcon.classList.add('fas', 'fa-times');
+    // Delete Bookmark
+    closeIcon.setAttribute('title', 'Delete Bookmark');
+		closeIcon.setAttribute('onclick', `deleteBookmark('${id}')`);
     // Favicon / Link Container
     const linkInfo = document.createElement('div');
     linkInfo.classList.add('name');
@@ -57,7 +60,7 @@ function getBookmarks() {
   if (localStorage.getItem('bookmarks')) {
     bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   } else {
-    let id = `https://stackoverflow.com/`
+    let id = `Bookmark List`
     bookmarks[id] = {
       name: 'Stackoverflow',
       url: 'https://stackoverflow.com/'
@@ -89,6 +92,16 @@ function addBookmark(e) {
   getBookmarks();
   bookmarkForm.reset();
   websiteNameInput.focus();
+}
+
+function deleteBookmark(id) {
+	// Loop through the bookmarks array
+	if (bookmarks[id]) {
+		delete bookmarks[id]
+	}
+	// Update bookmarks array in localStorage, re-populate DOM
+	localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+	getBookmarks();
 }
 
 // Event Listener for Submitting

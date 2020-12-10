@@ -5,12 +5,27 @@ const bookmarksContainer = document.getElementById('bookmarks-container');
 
 let bookmarks = {}
 
+function validate(nameValue, urlValue) {
+	const expression = /(https)?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/g;
+	const regex = new RegExp(expression);
+	if (!nameValue || !urlValue) {
+		alert('Please submit values for both fields');
+		return false;
+	}
+	if (!urlValue.match(regex)) {
+		alert('Please provide a valid web address');
+		return false;
+	}
+	// Valid
+	return true;
+}
+
 function displayBookmarks() {
   // Remove all bookmark elements
   bookmarksContainer.textContent = '';
   // Build items
   Object.keys(bookmarks).forEach((id) => {
- 
+
     const { name, url } = bookmarks[id];
 
     // Item
@@ -42,7 +57,7 @@ function getBookmarks() {
   if (localStorage.getItem('bookmarks')) {
     bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   } else {
-    let id = `https://www.github.com/`
+    let id = `https://stackoverflow.com/`
     bookmarks[id] = {
       name: 'Stackoverflow',
       url: 'https://stackoverflow.com/'
@@ -59,6 +74,10 @@ function addBookmark(e) {
   if (!urlValue.includes('http://', 'https://')) {
     urlValue = `https://${urlValue}`;
   }
+  	// Validation
+	if (!validate(nameValue, urlValue)) {
+		return false;
+	}
   // Set bookmark object, add to array
   const bookmark = {
     name: nameValue,

@@ -9,6 +9,7 @@ body {
 
 :root {
   --theme: #333399;
+  --theme-hover: #262673;
 }
 
 /* App Headings */
@@ -31,17 +32,27 @@ body {
 
 /* Modal */
 
-#x-close-button {
-  color: white;
-}
-
 #modal-button {
   margin: 0 auto;
   display: block;
-  padding: 16px 32px;
-  border-color: var(--theme);
+  padding: 20px 32px;
+  color: white;
   background-color: var(--theme);
   font-size: 25px;
+  font-weight: 500;
+}
+
+#modal-button:hover {
+  background-color: var(--theme-hover)
+}
+
+#modal-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#x-close-button {
+  color: white;
 }
 
 .modal-header {
@@ -72,4 +83,54 @@ body {
   font-size: 17px;
   font-weight: 500;
   background-color: var(--theme)
+}
+
+/* Bookmark Container */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: auto;
+  background-color: var(--theme);
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 20px;
+  margin: 10px;
+}
+
+.item:hover {
+  background-color: var(--theme-hover);
+}
+
+.item .name {
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.item i {
+  float: right;
+  margin-top: 5px;
+  color: white;
+}
+
+.item .name img {
+  max-width: 20px;
+  max-height: 20px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+.item a {
+  color: white;
+  font-weight: 500;
+  font-size: 20px
+}
+
+.item a:hover {
+  color: white
 }
